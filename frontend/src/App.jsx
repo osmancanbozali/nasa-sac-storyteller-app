@@ -21,7 +21,17 @@ function App() {
   const audioChunksRef = useRef([]);
   const [thinkingText, setThinkingText] = useState('Thinking');
   const [currentImage, setCurrentImage] = useState(tempImg);
-  const [userId] = useState(() => localStorage.getItem('userId') || uuidv4());
+  const [sessionId] = useState(() => {
+    // Check if there's an existing sessionId in sessionStorage
+    const existingSessionId = sessionStorage.getItem('sessionId');
+    if (existingSessionId) {
+      return existingSessionId;
+    }
+    // If not, generate a new sessionId
+    const newSessionId = uuidv4();
+    sessionStorage.setItem('sessionId', newSessionId);
+    return newSessionId;
+  });
 
   const getAudioDuration = useCallback((audioBlob) => {
     return new Promise((resolve) => {
@@ -70,7 +80,7 @@ function App() {
         const response = await fetch(`${process.env.VITE_API_URL}/chat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: inputMessage, userId }),
+          body: JSON.stringify({ message: inputMessage, sessionId }),
         });
         const data = await response.json();
         console.log('Received data from server:', data);
@@ -103,7 +113,7 @@ function App() {
         resetTypingState();
       }
     }
-  }, [inputMessage, resetTypingState, typeText, getAudioDuration, userId]);
+  }, [inputMessage, resetTypingState, typeText, getAudioDuration, sessionId]);
 
   const startRecording = useCallback(async () => {
     try {
@@ -241,8 +251,8 @@ function App() {
   }, [isResponseLoading]);
 
   useEffect(() => {
-    localStorage.setItem('userId', userId);
-  }, [userId]);
+    localStorage.setItem('userId', sessionId);
+  }, [sessionId]);
 
   const messageElements = useMemo(() => (
     messages.map((message, index) => (

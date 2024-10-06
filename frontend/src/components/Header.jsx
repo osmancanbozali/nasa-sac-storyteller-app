@@ -3,7 +3,7 @@ import React from 'react';
 function Header({ onExport, onImport, isResponseLoading }) {
   return (
     <header className="sticky top-0 bg-slate-900 text-white p-4 shadow-md z-10 flex justify-between items-center">
-      <h1 className="text-xl font-bold">Project Rocket</h1>
+      <h1 className="text-xl font-bold">OrbiTales</h1>
       <div className="flex">
         <button
           onClick={onExport}

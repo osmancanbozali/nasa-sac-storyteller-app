@@ -41,13 +41,20 @@ async function loadImageNames() {
 
 let imageNames = [];
 let context = '';
-const userConversations = {};
 
-function getOrCreateUserConversation(userId) {
-  if (!userConversations[userId]) {
-    userConversations[userId] = [{ role: "system", content: context }];
+// Initialize server
+async function initializeServer() {
+  imageNames = await loadImageNames();
+  context = CONTEXT;
+}
+
+const sessionConversations = {};
+
+function getOrCreateSessionConversation(sessionId) {
+  if (!sessionConversations[sessionId]) {
+    sessionConversations[sessionId] = [{ role: "system", content: context }];
   }
-  return userConversations[userId];
+  return sessionConversations[sessionId];
 }
 
 // Initialize server
@@ -58,12 +65,12 @@ async function initializeServer() {
   app.post('/chat', async (req, res) => {
     console.log('Received chat request:', req.body);
     try {
-      const { message, userId } = req.body;
-      if (!userId) {
-        return res.status(400).json({ error: 'userId is required' });
+      const { message, sessionId } = req.body;
+      if (!sessionId) {
+        return res.status(400).json({ error: 'sessionId is required' });
       }
       
-      const conversationHistory = getOrCreateUserConversation(userId);
+      const conversationHistory = getOrCreateSessionConversation(sessionId);
       
       // Convert the conversation history to the OpenAI API format
       const formattedHistory = conversationHistory.map(msg => {
