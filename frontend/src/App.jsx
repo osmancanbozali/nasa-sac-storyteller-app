@@ -288,11 +288,14 @@ function App() {
           <div ref={chatContainerRef} className="flex-grow overflow-y-auto p-4">
             <div className="hidden md:flex justify-center mb-4">
               <div className="max-w-md w-full bg-slate-800 text-white p-4 rounded-lg shadow-md">
-                <h2 className="font-bold text-lg mb-2 text-center">Instructions</h2>
+                <h2 className="font-bold text-lg mb-2 text-center">Welcome to OrbiTales Story Generator</h2>
                 <ul className="list-disc list-inside">
-                  <li>Type your message in the input field below.</li>
-                  <li>Press Enter or click the send button to send your message.</li>
-                  <li>The chatbot will respond to your message with text and voice.</li>
+                  <li>This website was created to make children curious about exoplanets while having fun.</li>
+                  <li>Type or record your message in the input field below.</li>
+                  <li>Click the send button to send your message.</li>
+                  <li>OrbiTales will generate/continue story based on your message.</li>
+                  <li>You can export and import your stories.</li>
+                  <li>For more information about Exoplanets, you can visit <a className='text-blue-500' href="https://science.nasa.gov/exoplanets/" target="_blank" rel="noopener noreferrer">NASA's Exoplanet Archive</a>.</li>
                 </ul>
               </div>
             </div>
