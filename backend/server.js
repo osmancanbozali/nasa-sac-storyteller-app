@@ -45,12 +45,13 @@ let context = '';
 // Initialize server
 async function initializeServer() {
   imageNames = await loadImageNames();
-  context = CONTEXT + '\n' + "For every response, please include a image name which has the same name as the subject of your response from the following list in your response's first line, only use the image name from the list, no other text. Do not pick the same image. There are 3 images for every planet. Image names are seperated by commas. LIST: " + '"' + imageNames.join(', ') + '"';  console.log(context);
+  context = CONTEXT;
   let conversationHistory = [
     { role: "system", content: context },
   ];
 
   app.post('/chat', async (req, res) => {
+    console.log('Received chat request:', req.body);
     try {
       const { message } = req.body;
       
@@ -75,24 +76,21 @@ async function initializeServer() {
       });
 
       const botMessageText = response.choices[0].message.content;
-      console.log("Original bot message:", botMessageText);
+      console.log("Bot message:", botMessageText);
 
-      // Extract the image name from the bot's response
-      const imageName = imageNames.find(() => botMessageText.split('\n')[0]);
-      console.log(`Image name: ${imageName}`);
+      // Select a random image from the imageNames array
+      const randomIndex = Math.floor(Math.random() * imageNames.length);
+      const imageName = imageNames[randomIndex];
+      console.log(`Randomly selected image: ${imageName}`);
 
-      // Trim the first line of the bot's message
-      const trimmedBotMessageText = botMessageText.split('\n').slice(1).join('\n').trim();
-      console.log("Trimmed bot message:", trimmedBotMessageText);
-
-      // Add the bot's trimmed response to the conversation history
-      conversationHistory.push({ sender: 'bot', text: trimmedBotMessageText });
+      // Add the bot's response to the conversation history
+      conversationHistory.push({ sender: 'bot', text: botMessageText });
 
       // Text-to-speech using Google API
       const ttsResponse = await axios.post(
         `https://texttospeech.googleapis.com/v1/text:synthesize?key=${GOOGLE_API_KEY}`,
         {
-          input: { text: trimmedBotMessageText },
+          input: { text: botMessageText },
           voice: { languageCode: 'en-US', name: 'en-US-Wavenet-F' },
           audioConfig: { audioEncoding: 'MP3' },
         }
@@ -100,23 +98,19 @@ async function initializeServer() {
       
       const audioContent = ttsResponse.data.audioContent;
       
-      // Update the response to include the image file
-      if (imageName) {
-        const imageUrl = `/images/${imageName}`; // URL to the image
-        res.json({ 
-          text: trimmedBotMessageText, 
-          audio: audioContent,
-          image: {
-            name: imageName,
-            url: imageUrl
-          }
-        });
-      } else {
-        res.json({ text: trimmedBotMessageText, audio: audioContent });
-      }
+      // Update the response to include the randomly selected image file
+      const imageUrl = `/images/${imageName}`; // URL to the image
+      res.json({ 
+        text: botMessageText, 
+        audio: audioContent,
+        image: {
+          name: imageName,
+          url: imageUrl
+        }
+      });
     } catch (error) {
-      console.error('Error:', error);
-      res.status(500).json({ error: 'An error occurred' });
+      console.error('Error in /chat endpoint:', error);
+      res.status(500).json({ error: 'An error occurred', details: error.message });
     }
   });
 
