@@ -11,7 +11,9 @@ const { CONTEXT } = require('./context');
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:5173'
+}));
 app.use(express.json());
 
 // Serve the images directory as static
@@ -197,7 +199,9 @@ async function initializeServer() {
   });
 
   const PORT = process.env.PORT || 3001;
-  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 }
 
 // Run the server
