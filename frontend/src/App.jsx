@@ -65,7 +65,7 @@ function App() {
       resetTypingState();
 
       try {
-        const response = await fetch('http://localhost:3001/chat', {
+        const response = await fetch(`${process.env.VITE_API_URL}/chat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message: inputMessage }),
@@ -87,8 +87,8 @@ function App() {
 
         // Handle the image
         if (data.image && data.image.url) {
-          console.log('Setting image URL:', `http://localhost:3001${data.image.url}`);
-          setCurrentImage(`http://localhost:3001${data.image.url}`);
+          console.log('Setting image URL:', `${process.env.VITE_API_URL}${data.image.url}`);
+          setCurrentImage(`${process.env.VITE_API_URL}${data.image.url}`);
         } else {
           console.log('No image data received');
         }
@@ -136,7 +136,7 @@ function App() {
     const audioBase64 = await blobToBase64(audioBlob);
 
     try {
-      const response = await fetch('http://localhost:3001/speech-to-text', {
+      const response = await fetch(`${process.env.VITE_API_URL}/speech-to-text`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ audio: audioBase64.split(',')[1] }),
@@ -196,7 +196,7 @@ function App() {
       formData.append('file', file);
 
       try {
-        const response = await fetch('http://localhost:3001/import-conversation', {
+        const response = await fetch(`${process.env.VITE_API_URL}/import-conversation`, {
           method: 'POST',
           body: formData,
         });
