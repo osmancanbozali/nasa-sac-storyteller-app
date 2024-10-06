@@ -41,19 +41,29 @@ async function loadImageNames() {
 
 let imageNames = [];
 let context = '';
+const userConversations = {};
+
+function getOrCreateUserConversation(userId) {
+  if (!userConversations[userId]) {
+    userConversations[userId] = [{ role: "system", content: context }];
+  }
+  return userConversations[userId];
+}
 
 // Initialize server
 async function initializeServer() {
   imageNames = await loadImageNames();
   context = CONTEXT;
-  let conversationHistory = [
-    { role: "system", content: context },
-  ];
 
   app.post('/chat', async (req, res) => {
     console.log('Received chat request:', req.body);
     try {
-      const { message } = req.body;
+      const { message, userId } = req.body;
+      if (!userId) {
+        return res.status(400).json({ error: 'userId is required' });
+      }
+      
+      const conversationHistory = getOrCreateUserConversation(userId);
       
       // Convert the conversation history to the OpenAI API format
       const formattedHistory = conversationHistory.map(msg => {
@@ -95,7 +105,7 @@ async function initializeServer() {
           audioConfig: { audioEncoding: 'MP3' },
         }
       );
-      
+
       const audioContent = ttsResponse.data.audioContent;
       
       // Update the response to include the randomly selected image file

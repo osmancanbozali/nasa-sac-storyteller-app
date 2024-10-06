@@ -4,6 +4,7 @@ import micSvg from './assets/mic.svg';
 import stopSvg from './assets/mic-off.svg';
 import rocketSvg from './assets/rocket.svg';
 import Header from './components/Header';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -20,6 +21,7 @@ function App() {
   const audioChunksRef = useRef([]);
   const [thinkingText, setThinkingText] = useState('Thinking');
   const [currentImage, setCurrentImage] = useState(tempImg);
+  const [userId] = useState(() => localStorage.getItem('userId') || uuidv4());
 
   const getAudioDuration = useCallback((audioBlob) => {
     return new Promise((resolve) => {
@@ -68,7 +70,7 @@ function App() {
         const response = await fetch(`${process.env.VITE_API_URL}/chat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ message: inputMessage }),
+          body: JSON.stringify({ message: inputMessage, userId }),
         });
         const data = await response.json();
         console.log('Received data from server:', data);
@@ -101,7 +103,7 @@ function App() {
         resetTypingState();
       }
     }
-  }, [inputMessage, resetTypingState, typeText, getAudioDuration]);
+  }, [inputMessage, resetTypingState, typeText, getAudioDuration, userId]);
 
   const startRecording = useCallback(async () => {
     try {
@@ -237,6 +239,10 @@ function App() {
     }
     return () => clearInterval(interval);
   }, [isResponseLoading]);
+
+  useEffect(() => {
+    localStorage.setItem('userId', userId);
+  }, [userId]);
 
   const messageElements = useMemo(() => (
     messages.map((message, index) => (
