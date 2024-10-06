@@ -206,6 +206,7 @@ function App() {
     if (file) {
       const formData = new FormData();
       formData.append('file', file);
+      formData.append('sessionId', sessionId);
 
       try {
         const response = await fetch(`${process.env.VITE_API_URL}/import-conversation`, {
@@ -220,7 +221,7 @@ function App() {
         console.error('Error importing conversation:', error);
       }
     }
-  }, []);
+  }, [sessionId]);
 
   useEffect(() => {
     if (chatContainerRef.current) {

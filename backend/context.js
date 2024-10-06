@@ -1,4 +1,5 @@
-const CONTEXT = `Audience: The target audience is 7-15 years old.
+const CONTEXT = `
+Audience: The target audience is 7-15 years old.
 Real Data: Stories must incorporate real data about exoplanets and space, staying grounded in science.
 Interactivity: At key moments, the reader is asked for input or choices to shape the story.
 Descriptive and Immersive: Use vivid, descriptive language to create engaging, immersive experiences.
@@ -10,193 +11,199 @@ Response Length:
 Focus: Stick to the story and continue it without diverging based on unrelated user inputs.
 Data Source: The story should use only data provided in the context, avoiding external resources.
 Fun in the Foreground: The story should keep the fun side as a priority.
+Do not use non-alphanumeric characters in your response.
 In your response, you must include the following sections:
 Information Data:
 "
-Exoplanets
-An exoplanet is any planet beyond our solar system. Most of them orbit other stars, but some free-floating exoplanets, called rogue planets, are untethered to any star. We’ve confirmed more than 5,600 exoplanets out of the billions that we believe exist.
-Overview
-Most of the exoplanets discovered so far are in a relatively small region of our galaxy, the Milky Way. ("Small" meaning within thousands of light-years of our solar system; one light-year equals 5.88 trillion miles, or 9.46 trillion kilometers.) Even the closest known exoplanet to Earth, Proxima Centauri b, is still about 4 light-years away. We know there are more planets than stars in the galaxy.
-By measuring exoplanets’ sizes (diameters) and masses (weights), we can see compositions ranging from rocky (like Earth and Venus) to gas-rich (like Jupiter and Saturn). Some planets may be dominated by water or ice, while others are dominated by iron or carbon. We’ve identified lava worlds covered in molten seas, puffy planets the density of Styrofoam and dense cores of planets still orbiting their stars.
-An exoplanet, or extrasolar planet, is a planet outside of our solar system that usually orbits another star in our galaxy.
-Most of the exoplanets discovered so far are in a relatively small region of our galaxy, the Milky Way. ("Small" meaning within thousands of light-years of our solar system; one light-year equals 5.88 trillion miles, or 9.46 trillion kilometers.) That is as far as current telescopes have been able to probe. We know from NASA’s Kepler Space Telescope that there are more planets than stars in the galaxy.
-Although exoplanets are far – even the closest known exoplanet to Earth, Proxima Centauri b, is still about 4 light-years away – scientists have discovered creative ways to spot these seemingly tiny objects.
-How Do We Find Exoplanets?
-There are five methods scientists commonly use to discover exoplanets.
-The two main techniques are the transit and radial velocity methods.
-When a planet passes directly between an observer and the star it orbits, it blocks some of that starlight. For a brief period of time, that star’s light actually gets dimmer. It's a tiny change, but it's enough to clue astronomers in to the presence of an exoplanet around a distant star. This is known as the transit method.
-Orbiting planets cause stars to wobble in space, changing the color of light astronomers see when observing a star. Stars are affected by the gravitational tug of their orbiting planets and, when observed through a telescope, this affects the star's light spectrum. If the star moves in the direction of the observer it will appear to be shifted toward blue. If it is moving away from the observer, it will shift toward the red. Observing this is known as the radial velocity method.
-NASA’s Exoplanet Space Telescopes
-Thousands of exoplanets have been discovered and confirmed orbiting other stars. The first evidence of exoplanets dates to 1917 when Van Maanen identified the first polluted white dwarf, however, the first confirmed detection of an exoplanet would not come until the 1990s. The discovery of exoplanets grew exponentially in the years to follow with the launch of the Kepler Space Telescope.
-The Kepler mission was specifically designed to survey our region of the Milky Way galaxy to discover hundreds of Earth-size and smaller planets in or near the habitable zone (also called the “Godilocks zone,” the area around a star where rocky planets could have liquid water on the surface) and determine the fraction of stars that might have such planets around them. After the second of Kepler’s four gyroscope-like wheels failed in 2013, Kepler completed its prime mission that November and began its extended mission, K2. The spacecraft was retired in 2018, but Kepler data are still being used to find exoplanets (more than 2,700 confirmed so far).
-NASA’s Spitzer Space Telescope (2013-2020) was not designed to search for exoplanets, but its infrared instruments made it an excellent exoplanet explorer. It was used in the notable discovery of the TRAPPIST-1 system. In 2018 the Transiting Exoplanet Survey Satellite (TESS) was launched as a successor to Kepler to discover exoplanets in orbit around the brightest dwarf stars, the most common star type in our galaxy. NASA’s James Webb Space Telescope and the future Nancy Grace Roman Space Telescope hold great promise for what we can learn from exoplanets. Through spectroscopy, reading light signatures for information, astronomers hope to learn more about planet atmospheres and the conditions of the planets themselves.
-Confirmed vs. Candidate
-An exoplanet candidate is a likely planet discovered by a telescope but has not yet been proven to actually exist.
-It is possible for some candidates to turn out to be "false positives." A planet is considered "confirmed" once it is verified through additional observation using two other telescopes. There are currently thousands of planet candidates awaiting confirmation. But time on telescopes is considered a precious resource and it takes a lot of computing time to find which targets to investigate. This is one area where amateur scientists can work with NASA data to help refine targets and even discover exoplanets. Where computers might miss a single transit, humans can detect small brightness dips in data that might tell us there is a planet to be found.
-How Do We Name Exoplanets?
-Exoplanet names can look long and complicated at first, especially when compared to names like Venus and Mars. However, there is a logic behind their naming system that is important to how scientists catalog thousands of planets. Astronomers differentiate between the alphanumeric "designations" and alphabetical "proper names." All stars and exoplanets have designations, but very few have proper names.
-The first part of an exoplanet name is usually the telescope or survey that discovered it. The number is the order in which the star was cataloged by position. The lowercase letter stands for the planet, in the order in which the planet was found. The first planet found is always named b, with ensuing planets named c, d, e, f and so on. The star that the exoplanet orbits is usually the undeclared "A" of the system, which can be useful if the system contains many stars, which themselves may be designated B or C. (Stars get capital letters; planets receive lowercase designations.) If a bunch of exoplanets around the same star are found at once, the planet closest to its star is named b with more distant planets named c, d, e and so on.
-An example of an exoplanet name is Kepler-16b, where "Kepler" is the name of the telescope that observed the system, 16 is the order in which the star was cataloged and "b" is the closest planet to the star. If we were naming Earth as an exoplanet, it would be called Sun d (Sun is the name of our star, and Earth is the third planet, starting with b, Mercury).
-RADIAL VELOCITY
-Watching for Wobble
-1092 planets discovered
-TRANSIT
-Searching for Shadows
-4295 planets discovered
-DIRECT IMAGING
-Taking Pictures
-82 planets discovered
-GRAVITATIONAL MICROLENSING
-Light in a Gravity Lens
-225 planets discovered
-ASTROMETRY
-Minuscule Movements
-3 planets discovered
-Strange New Worlds
-Explore intriguing worlds in our galaxy
-The first planets beyond our solar system, exoplanets, were discovered in the late 1980s and early 1990s. Since then, we've discovered thousands more. Here are a few of our favorites.
-Kepler-16b - 1 planet, 2 stars
-Discovered 2011: Kepler-16b is a world where two suns set over the horizon instead of just one, the first Tatooine-like planet found in our galaxy.
-Kepler-22b - Possible water world
-Discovered 2011: A possible ocean world orbiting in the habitable zone—the region around a star where the temperature is right for liquid water, a requirement for life on Earth.
-Kepler-7b - First to be cloud-mapped
-Discovered 2009: A massive world called a hot Jupiter, Kepler-7b was the first exoplanet to have its clouds mapped.
-Kepler-452 b - Earth's older cousin
-Discovered 2015: An "Earth-cousin" that orbits a star like our sun in the habitable zone, where liquid water could exist.
-KELT-9 b - Hotter than most stars
-Discovered 2017: KELT-9b is so hot that the heat tears molecules apart on the dayside.
-WASP-12 b - Being eaten by parent star
-Discovered 2008: The doomed planet WASP-12b is a hot Jupiter that orbits so close to its parent star, it's being torn apart. It takes this alien world only 1.1 days to completely circle its Sun.
-55 Cancri e - Lava ocean, sparkling skies
-Discovered 2004: This super hot world is covered in a global ocean of lava and has sparkling skies.
-TYC 8998-760-1 b - Planet or failed star?
-Discovered 2020: This object, a brown dwarf or perhaps a large planet, joins an exclusive club: those that have been directly imaged.
-GJ 15 A b - Super-heated Super-Earth
-Discovered 2014: GJ 15 A b orbits a red-dwarf star just 11 light-years away with its companion GJ 15 A c, making them our nearest multi-planet neighbors discovered so far.
-GJ 15 A c - Only 11 light-years away
-Discovered 2018: Nearby GJ 15 A c orbits a red-dwarf star just 11 light-years away with its companion, making them our nearest multi-planet neighbors discovered so far.
-Kepler-36 b - Bizarrely close neighbors
-Discovered 2012: Kepler-36b and its companion planet, Kepler-36c, are far too close to their sun to be in the habitable zone, and they are bizarrely close to each other.
-GJ 504 b - Magnificently magenta
-If we could travel to this giant planet, we would see a world still glowing from the heat of its formation with a color reminiscent of a dark cherry blossom, a dull magenta.
-GJ 436 b - Mysteriously missing methane
-Discovered 2004: A close exoplanet with a secret: a lack of methane on this hot world. GJ 436 b is a Neptune-sized exoplanet that orbits an M-type star. Its mass is 22.1 Earths
-TOI-849 b - Atmosphere destroyed by star
-Discovered 2020: A world called TOI 849 b could be the exposed, naked core of a gas giant whose atmosphere was blasted away by its star.
-AU Microscopii b - Infant solar system
-Discovered 2020: Located less than 32 light-years from Earth, AU Microscopii is among the youngest planetary systems ever observed by astronomers, and its star throws vicious temper tantrums!
-PSR B1257+12 b - Doomed world
-Discovered 1994: PSR B1257+12 b, along with fellow doomed worlds, were among the first and creepiest to be discovered as they orbit an undead star known as a pulsar. Pulsar planets like Poltergeist and its neighboring worlds, Phobetor and Draugr, are consumed with constant radiation from the star’s core.
-HD 189733 b - Rains glass
-Discovered 2005: This far-off blue planet may look like a friendly haven – but don’t be deceived! Weather here is deadly. The planet’s cobalt blue color comes from a hazy, blow-torched atmosphere containing clouds laced with glass. Howling winds send the storming glass sideways at 5,400 mph (2km/s), whipping all in a sickening spiral. It’s death by a million cuts on this slasher planet!
-KOI-55 b - Hotter than the Sun
-Discovered 2011: Kepler-70b (aka KOI-55) could well be another circle of hell with an average temperature hotter than the Sun’s surface. It used to be Jupiter-sized until it spent some time inside its now-dead star…a trip that destroys most planets, but left this one a Freddy Krueger-like burned world smaller than Earth. At about 12,000 degrees F (6,800 C), it is one of the hottest planets discovered. In fact, the planet itself is evaporating, soon to be another victim.
-D 17156 b - AKA Mulchatna
-Discovered 2007: A giant planet composed mostly of gas. Also given the name Mulchatna, for a river in Alaska that supports indigenous and native populations.
-GJ 1132 b - On its second atmosphere
-Discovered 2015: GJ 1132 b may have begun as a mini-Neptune, but is now a rocky world a little bigger than Earth. The planet may have lost one atmosphere but gained another from volcanic activity.
-TIC 172900988 b - Rare double transit discovery
-Discovered 2021: This planet about as big around as Jupiter belongs to a system that’s a stunner. The planet orbits two stars and, viewed from Earth, crosses the faces of both. That means this system puts on quite a show!
-WASP-96 b - Hot and puffy with a signature of water
-Discovered 2014: An international team found that WASP-96 b is a world with a sodium rich atmosphere. The planet, located nearly 1,150 light-years from Earth, orbits its star every 3.4 days. It has about half the mass of Jupiter, and its discovery was announced in 2014.
-TOI-3757 b - Marshmallow planet
-Discovered 2022: A gas giant exoplanet with the density of a marshmallow has been detected in orbit around a cool red dwarf. TOI-3757 b, is the lowest-density planet ever detected around a red dwarf star (2022).
-TrES-2 b - Eternal Night
-Are you afraid of the dark? Welcome to TrEs-2b, the planet of eternal night. The darkest planet ever discovered orbiting a star, this alien world is less reflective than coal. Inside its atmosphere, you’d be flying blind in the dark. Some scientists think an eerie deep red glow would emanate from its burning atmosphere.
-Glossary
-Sometimes the terms used to describe the planets beyond our solar system need more explanation. Below are some of the more common words and phrases you might run across.
-Exoplanet:
-A planet orbiting a star other than our Sun; also called “extrasolar planet.”
-Habitable zone:
-The range of orbital distance from a star at which temperatures would allow liquid water to exist on the surface of a planet with sufficient atmosphere. This range of distance changes depending on the size and temperature of the star. Earth is in the habitable zone of the Sun, one of the reasons our planet has liquid water like oceans and lakes.
-Goldilocks zone:
-An alternative name for “habitable zone” (see above), from the children’s story, “Goldilocks and the Three Bears.”
-Terrestrial:
-Planets composed mostly of rock (silicates) and metals, like Earth, Venus, Mars, and Mercury. Sometimes also called “rocky” or “telluric.”
-Tidally locked:
-When a celestial body, such as a planet or moon, always has one side facing the body it orbits, such as a star or planet. A tidally-locked planet has a day side facing the heat of its star, and a colder night side facing away. Tidal forces and the star’s gravity “lock” the planet, so that its orbital period is equal to its rotation period.
-Red dwarf star or M dwarf star:
-A class of small, relatively cool stars, emitting dim, red light. They are the most common type of star, comprising about 75 percent of all stars in the galaxy.
-Light-year:
-The distance light travels in one year, about 5.88 trillion miles (about 9.5 trillion kilometers).
-AU:
-An astronomical unit – the distance between Earth and the Sun, or about 93 million miles (150 million kilometers).
-Super-Earth:
-One of the most common types of exoplanets discovered so far, with a mass between that of Earth and Neptune. The properties of such planets are largely unknown.
-Orbit:
-The curving, repeating path of an object, such as a satellite, moon or planet, around a space body such as a moon, planet or star.
-Infrared:
-Electromagnetic radiation with wavelengths longer than the red end of the visible light spectrum, but shorter than microwaves.
-Transit:
-When an exoplanet crosses the face of its star from the perspective of Earthbound observers. The change in brightness of the star due to the exoplanet can be measured and used to calculate the diameter of the exoplanet.
-James Webb Space Telescope:
-This NASA space telescope, which launched in 2021, is a large infrared telescope with a 6.5-meter primary mirror. It is the most powerful and complex space science telescope ever built. It is sometimes called JWST or Webb.
-Spitzer Space Telescope:
-A NASA space telescope launched in August 2003 and retired in January 2020. Spitzer observed infrared (heat) radiation from exoplanets, stars, stellar nurseries, the centers of galaxies and the early stages of planetary system formation.
-Light curve:
-Graphical representation of changes in the brightness of space objects over time, including those of variable stars, supernovae and transiting exoplanets that sometimes pass in front of their stars.
-Hot Jupiter:
-A giant, gas planet in extremely close orbit around its star. Some complete a single orbit—their “year”—in as little as a few Earth days.
-Water World:
-Hypothesized extrasolar planets with surfaces completely covered by deep oceans of water.
-Radial Velocity:
-The amount of “wobble” induced in a star by the gravity of an orbiting planet, or planets. By measuring the stretching and compressing of light wavelengths from the star, as it is pulled in one direction, then another, Earthbound observers can detect extrasolar planets.
-Mass:
-The mass of a planet is the amount of matter in the planet, which is not always the same as its “size.” Exoplanet masses are measured in comparison to Earth for smaller rocky planets, or Jupiter for big gas planets. The standard unit of mass is the kilogram (kg), and the Earth’s mass is about 5.97 x 1024 kg.
-Brown dwarf:
-A star-like object that is not quite massive enough to burn like a star, but bigger than a planet.
-Ultra-cool dwarf:
-Star-like objects with effective temperatures of less than 2,700 Kelvin are referred to as
-‘ultracool dwarfs.' This group includes stars with extremely low mass and brown dwarfs, or objects that are not quite massive enough to burn like a star. “Dwarf” is the term for an average adult star, used to distinguish stars like the sun from the giant stars that exist in the universe.
-Spectroscopy:
-A method of analyzing light by separating it into distinct wavelengths, which allows one to identify its chemical components (by their unique wavelength signatures) to determine the atmospheric components of alien worlds.
-White dwarf:
-A dim, dense, compact star; the remnant core that remains after intermediate-mass stars (similar to the Sun) exhaust their nuclear fuel and blow off their outer layers. They are dominated by oxygen and carbon, but often have thin layers of hydrogen and helium.
-F-type star:
-A main sequence star that is somewhat hotter, more massive, and more luminous than our Sun.
-General questions
-What is an exoplanet?
-An exoplanet is a planet outside our solar system, usually orbiting another star. They are also sometimes called "extrasolar planets," "extra-" implying that they are outside of our solar system.
-detailed answer
-Is there life on other planets?
-Earth is the only planet we know of with life on it...so far. Scientists are searching the galaxy for planets similar to Earth, and signs of life. As we see on Earth, life can adapt to conditions that human beings would consider very harsh (temperature, radiation, salinity, acidity, aridity, etc). So it may be possible that life started on other worlds and adapted to conditions quite alien to what we are used to.
-detailed answer
-How many exoplanets are there?
-To date, more than 5,500 exoplanets have been discovered and are considered "confirmed" by NASA, out of the billions in our galaxy alone. There are thousands of other "candidate" exoplanet detections that require further observations in order to say for sure whether or not the exoplanet is real.
-detailed answer
-Where are exoplanets?
-In a lot of places! Most of the exoplanets discovered so far are in a relatively small region of our galaxy, the Milky Way. ("Small" meaning within thousands of light years of the solar system). That is as far as current telescopes have been able to probe.
-detailed answer
-What is the closest exoplanet to Earth?
-Proxima Centauri b, which is about four light-years away. Its mass is consistent with it being slightly larger than Earth. Based on what we know about exoplanets, and planets in our solar system similar in mass to Earth, it is most likely a rocky planet. Proxima Centauri b orbits in the "habitable zone" of its star, which means it could have liquid water on its surface – if it has an atmosphere which could support it. Calculations suggest that the one side of the exoplanet Proxima b faces its star all the time, which would make for a very different atmosphere and weather than we have on Earth. Its parent star, Proxima Centauri, is a dim red dwarf star that gives off about 600 times less light than our Sun. Proxima Centauri is the closest star to the Earth after our Sun, but it is still about 9,000 times farther than planet Neptune.
-How do we find exoplanets?
-The successes of discovering exoplanets in recent decades seem to be telling us that the galaxy is teeming with trillions of exoplanets, but finding them isn't easy. Planets are typically billions of times fainter than the stars they orbit, and they are incredibly distant. The challenges of observing extrasolar planets stem from four basic facts: Planets don't produce any light of their own, except when they’re recently formed (i.e. young). They are an enormous distance from us. They are lost in the blinding glare of their parent stars. Their sizes and masses are typically much, much smaller than that of the stars they orbit.It’s pretty rare for astronomers to see an exoplanet through their telescopes the way you might see Mars through a telescope from Earth. That’s called direct imaging, and only a handful of exoplanets have been found this way (and these tend to be young gas giant planets orbiting very far from their stars).Most exoplanets are found through indirect methods: measuring the dimming of a star that happens to have a planet pass in front of it, or monitoring the spectrum of a star for the tell-tale signs of a planet pulling on its star and causing its light to subtly Doppler shift. NASA’s Kepler Space Telescope finds thousands of planets by observing “transits,” the slight dimming of light from a star when its tiny planet passes between it and our telescopes. Other methods include gravitational lensing, the “wobble method,” and direct imaging.
-Will a person ever go to an exoplanet?
-Not anytime soon, given the enormous distances between the stars and the time it would take to travel between them with our current technology. Perhaps one day a robot will visit an exoplanet like the rovers on Mars. But that day too is still very far in the future. First, we have to learn how to travel much faster and further in space than we’ve ever gone before. Keeping humans alive to complete such a long journey is probably the biggest challenge. Today, NASA is concentrating on the steps to get humans to Mars, which is our next-door neighbor. In the meantime, you can “stand” on an illustration of an exoplanet surface with our virtual reality.
-Will we ever take real images of exoplanets?
-Yes! In recent years, NASA has taken images, called direct imaging, of exoplanets that are light-years away. In the images, the planets sometimes look like faint spots next to blotted out regions (where the bright light of the planet's star has been subtracted). Examples of imaged planets orbit the bright stars Fomalhaut, HR 8799, and Beta Pictoris. The James Webb Space Telescope and upcoming Nancy Grace Roman Space Telescope will image more exoplanets around nearby stars. The big challenge for NASA is to image Earth-like planets orbiting nearby stars, which tend to be about 10 billion times fainter than their stars,
-How many telescopes are looking for exoplanets?
-There are telescopes in space, on the ground and even in the air that are being used to hunt exoplanets. NASA has telescopes in space currently studying exoplanets – one observatory dedicated to discovering exoplanets (the Transiting Exoplanet Survey Satellite), and Hubble, a powerful, general-purpose observatory that conduct a wide range of astronomical observations, including exoplanet science. The James Webb Space Telescope is exploring exoplanet atmospheres. More than two dozen telescopes on the ground are being used to discover and characterize exoplanets, ranging from small robotic observatories to large telescopes like the Keck Observatories in Hawaii. Even SOFIA, NASA's infrared observatory built into a Boeing 747-SP airplane, conducted some exoplanet observations.
-Do any exoplanets have rings?
-Rings orbit all of the gas giant planets in our solar system. They range from being very dusty (Jupiter), to very icy (Saturn), to very carbon-rich (Uranus and Neptune). This hints that rings may be common around cold gas giant exoplanets orbiting other stars too. A very large ring system has been detected around one candidate exoplanet, J1407 b; however the rings cover tens of millions of miles. It may be a disk of material forming exomoons rather than ring system similar to Saturn's.
-Do exoplanets have water on them?
-Scientists have found water molecules in the atmospheres of several exoplanets, but some of those planets are very hot and probably not suitable for life as we know it. Scientists have yet to discover liquid water, like oceans or lakes. They are looking for exoplanets with liquid water in an area called the “habitable zone” around stars.
-What is the habitable zone or “Goldilocks zone”?
-The habitable zone is the area around a star where it is not too hot and not too cold for liquid water to exist on the surface of surrounding planets.
-detailed answer
-What are exoplanets made of?
-The exoplanets for which astronomers are able to measure both their sizes (diameters) and masses, have densities that are suggestive of compositions ranging from very rocky (like Earth and Venus) to very gas-rich (like Jupiter and Saturn). Exoplanets are made up of elements similar to that of the planets in our solar system, but their mixes of those elements may differ. Some planets may be dominated by water or ice, while others are dominated by iron or carbon.
-Are there any exoplanets like Earth?
-Not yet. We haven’t found a planet that can support life like Earth. So far, our home is unique in the universe. We have found many Earth-sized rocky exoplanets, some of which are in the habitable zones of their stars. The next step in studying them is to analyze their atmospheres for “biosignature" molecules, which may be a sign of life.
-Are other solar systems like ours?
-Other solar systems, called planetary systems, come in many shapes and sizes. When scientists first started searching for planetary systems, they expected them to look like our solar system, with inner rocky planets and outer cold gas giants and ice planets. But some solar systems pack many planets into very compact orbits with short orbital periods, while others have only a few planets with orbits that last hundreds of years. Some planetary systems have Jupiter-like giants that orbit their star in a few hours, and are hot enough to melt metal. Some exoplanets even orbit multiple stars at a time.(Note: “Dwarf” is actually the name for a regular-sized adult star, distinguishing them from giant stars. An example of a giant star is Rigel, the blue supergiant found in the constellation Orion).
-Do exoplanets have stars like our Sun?
-Yes, some do. Kepler-452b is an example of a planet that orbits a star like our sun. Both our sun and Kepler-452 are G dwarf stars, which make up only 3 percent of the stars in the universe. More common are M dwarf stars– small red stars that make up 75 percent of all the stars we know.Other stars in our universe range from massive and hot O-type stars to the small and cool M dwarf stars like TRAPPIST-1 and Proxima Centauri. Scientists have found planets around five star types that range from red, to orange, to bluish-white. Some planets even orbit two or three stars at a time.(Note: “Dwarf” is actually the name for a regular-sized adult star, distinguishing them from giant stars. An example of a giant star is Rigel, the blue supergiant found in the constellation Orion).
-How do exoplanets get their names?
-Exoplanet names can look long and complicated at first, but they have a logic behind them that is important to scientists cataloging thousands of planets. Let’s use HD 189733 b (a blue-ish planet where it may rain glass sideways) as an example. The first part of the name is usually the telescope or survey that found it. In this case "HD" stands for the "Henry Draper Catalogue,” a widely-used star catalog. The number 189733 is the order in which the star was catalogued by position (the 189,733rd star added to the catalog). The lowercase letter "b" stands for the planet, in the order in which the planet was found. The first planet found is always named b, with ensuing planets named c, d, e, f and so on.
-detailed answer
-What is a light-year?
-The distance light travels in one year. Light zips through space at 186,000 miles (300,000 kilometers) per second, or 5.88 trillion miles (9.46 trillion kilometers) a year.
-detailed answer`
+Exoplanets are planets that orbit stars beyond our solar system. While most exoplanets orbit stars, some, known as rogue planets, do not. Over 5,600 exoplanets have been confirmed so far, though many more are believed to exist. Most discovered exoplanets are located within thousands of light-years from our solar system, with Proxima Centauri b, the closest known exoplanet, being 4 light-years away.
+
+Exoplanets vary in composition, ranging from rocky worlds like Earth to gas giants like Jupiter. Some planets are covered in water or ice, while others are composed primarily of carbon or iron. Scientists have discovered extreme types of exoplanets, such as lava-covered planets and massive gas giants with the density of Styrofoam.
+
+How Are Exoplanets Found?
+Exoplanets are usually found using two main methods: the transit method and radial velocity method. The transit method involves detecting the slight dimming of a star’s light when a planet passes in front of it. The radial velocity method measures a star’s wobble caused by the gravitational pull of an orbiting planet. Other methods include direct imaging, gravitational microlensing, and astrometry.
+
+Exoplanet Naming
+Exoplanets are named after the telescope or survey that discovered them, followed by a catalog number and a lowercase letter representing the order of discovery. The first planet found in a system is designated “b,” and subsequent discoveries are labeled “c,” “d,” and so on.
+
+Confirmed vs. Candidate Exoplanets
+An exoplanet is considered “confirmed” after being observed by at least two other telescopes, while a “candidate” is a planet-like object awaiting verification. Thousands of candidates are still awaiting confirmation.
+
+NASA’s Exoplanet Telescopes
+NASA has used various telescopes to discover exoplanets, such as the Kepler Space Telescope, which discovered thousands of exoplanets during its mission from 2009 to 2018. Other key instruments include the Spitzer Space Telescope and the Transiting Exoplanet Survey Satellite (TESS). The James Webb Space Telescope is expected to provide more detailed observations of exoplanets, including their atmospheres.
+
+Notable Exoplanets
+Kepler-16b was the first planet discovered with two suns, similar to Tatooine in “Star Wars.” Kepler-452b, discovered in 2015, is often called Earth’s “older cousin” due to its similarities. Other notable exoplanets include KELT-9b, which is hotter than many stars, and WASP-12b, a planet being devoured by its parent star.
+
+Future of Exoplanet Exploration
+While we cannot yet travel to exoplanets, future telescopes will continue the search for Earth-like planets and study their atmospheres to determine if they could support life. Direct imaging of exoplanets is becoming more common, though it remains challenging due to the faint light of distant planets compared to their stars. Scientists are optimistic about finding signs of life beyond Earth in the coming decades.
+
+These colorful light shows were generated by solar storms and provide a vivid demonstration of activity on the Sun affecting the Earth. The pummeling experienced by our home planet is an example of our one-way relationship with the Sun: it can have a noticeable effect on the Earth, but the Earth has a negligible effect on the Sun. Further afield in the galaxy, this isn’t always the case. In a few other systems, planets can have a big effect on their star, changing their looks in surprising ways.
+
+WASP-18b is an example of a hot Jupiter, with a mass about ten times that of Jupiter and an orbit that is less than 24 hours long. The host star, WASP-18, is estimated to have an age that lies between about 500 million and 2 billion years, relatively young by astronomical standards.
+
+Younger stars tend to be more active, with stronger magnetic fields, larger flares, and more intense X-ray emission than their older counterparts. Magnetic activity, flaring, and X-ray emission are linked to the stellar rotation, which generally declines with age. However, when astronomers took a long look with Chandra at WASP-18, they didn’t detect any X-rays. Using established relations between the magnetic activity and X-ray emission of stars and their age indicates that WASP-18 is about 100 times less active than it should be at its age.
+
+The researchers argue that tidal forces from the gravitational pull of the massive planet – similar to those the Moon has on Earth’s tides but on a much larger scale – may have disrupted the magnetic field of the star. The strength of the magnetic field depends on the amount of convection in the star. Convection is the process where hot gas stirs the interior of the star.
+
+The planet’s gravity may cause motions of gas in the interior of the star that weaken the convection, causing the magnetic field to weaken and activity to decline. This causes the appearance of premature aging in the star. WASP-18 is thought to have a shallow convection zone, making it unusually susceptible to tidal effects.
+
+In some cases, where they orbit a different type of star to WASP-18, the effect of hot Jupiters can be flipped and they can make a star appear younger than it really is. In the cases of HD 189733 and CoRoT-2a, the presence of the planet appears to have increased the amount of activity in the star. In these cases, the stars have much deeper convection zones than WASP-18, and tidal effects have little influence on convection and hence on the star’s dynamo. Instead, the planets may be speeding up their star’s rotation, leading to a more powerful dynamo and more activity than expected for the star’s age. In these cases, having a companion makes the star act younger than it really is. That makes sense for people and, in a few cases, for stars.
+
+In such systems, what effect does the star have on its planet? In the cases of HD 189733 and CoRoT-2a, strong X-rays and ultraviolet radiation from the active star are evaporating the atmospheres of the planet. For HD 189733, astronomers estimate the planet is losing 100 to 600 million kilograms per second, and for CoRoT-2a, astronomers estimate the planet is losing about 5 billion kilograms per second. For WASP-18, with much weaker X-ray emission and ultraviolet radiation, there is much less evaporation of the nearby planet’s upper atmosphere than there would be if the star was more active. In effect, the planet is protecting itself. Its gravity causes the nearby star to be less active, and that causes the planet to be struck with less damaging radiation. HD 189733b and CoRoT-2b, on the other hand, are behaving in a self-destructive manner.
+
+Talk of planet destruction isn’t necessary for our present-day solar system, where the planets are much farther away from the Sun than hot Jupiters are. However, that won’t always be the case. A few billion years in the future, the Sun will dramatically expand in size when it becomes a red giant. Our oceans will boil away, never to return, and what’s left of the Earth may end up spiraling in towards the Sun. We don’t know the exact fate of our home planet, but it is clear that our aurora-viewing days are numbered.
+
+A Star Is Born
+It all begins with an unimaginably cold cloud. This cloud contains the seeds of whole new worlds – stars and planets about to be born. Molecules of hydrogen and helium gas, which normally zip around at high speeds, slow down and clump together because of gravity. Tiny grains of silicates, iron, and carbon-rich material — together classified simply as “dust” — send some of the gas’s energy back out into space, making the cloud even colder. The dust grains spiral into the central knot of matter, like water running down a drain.
+
+As this pocket of the cloud contracts and thickens, a bright, hot ball begins to form at the center as more gas and dust are pulled in. Gravity is waging a battle against the pressure of gas and magnetic fields, and gravity is winning.
+
+While the infant star takes shape, the material spiraling inward flattens into a pancake-like structure known as an accretion disk. The gravitational tugs of the galaxy’s billions of stars may have accelerated and shocked the gas. Or, maybe two clouds are bumping into each other, causing pockets of gas to coalesce. But sometimes, the catastrophic explosion of a massive star drives strong winds of material into a star-forming cloud — a death resulting in a new birth.
+
+Mysteriously, in our galaxy and probably most others, the likeliest type of star to form is almost too small to sustain itself. Red dwarfs, which can be between one-thirteenth to one-half the mass of the Sun, represent three-quarters of the stars in the Milky Way. Any smaller than this, and hydrogen cannot fuse in its core – the dominant process powering most stars. Red dwarf stars burn so slowly that their lifetimes will be longer than that of the present-day universe.
+
+Sun-like stars are more rare, although they still represent 8 percent of the galaxy. Most rare are the very massive stars, which can weigh as much as 150 suns and only live a few million years. “Those stars are so big, so luminous, and so short-lived, that astronomers are observing these stars in their pulsating, mass-ejecting death throes, while their low-mass stellar siblings are still in the process of forming,” Mamajek said.
+
+A young star is called a “protostar” until it can power itself with hydrogen fusion reactions, and high temperature is crucial to that transition. As matter falls in faster and faster, and the ball of gas at the center gets smaller and more compact, the tug-of-war between gravity and other pressures heats up the infant star. Even hundreds of thousands of degrees is not enough. The core of the star must get to about 10 million degrees before it becomes a hydrogen-burning machine. To be a bona fide star, it must spontaneously fuse hydrogen atoms to form helium, releasing enormous amounts of energy. This energy stabilizes the star’s core, such that it stops contracting. This whole process can take about 40 million years.
+
+‘Raining’ Stars
+The same process may be happening in dozens, hundreds, or even thousands of places in the same molecular cloud, becoming a glittering stellar nursery. “It’s like rain in a cloud on Earth,” said Eric Mamajek, deputy program scientist of NASA’s Exoplanet Exploration Program. “If you’ve got the combination of physical conditions to form a drop of rain, chances are you’re next to parcels of gas that have similarly ripe conditions right for producing lots and lots and lots of rain.”
+
+In this way, molecular clouds are like Earth clouds, and the raindrops are like stars. The gas from these clouds can collapse and fragment, forming big batches of baby stars. So, stars tend to form in big groups.
+
+NEWS FLASH: A stellar nursery
+Cygnus X is one of the most active regions in the Milky Way, hatching baby stars. Some 4,500 light-years away, thousands of stars are being cradled in a violently turbulent cloud of gas and dust. NASA’s Spitzer Space Telescope captured this image in infrared light that reveals cavities in the cloud, carved out by the violent outbursts of massive stars. The radiation and winds from these massive stars can rip star-forming material apart, but also trigger the birth of new stars. In this image, the color green highlights dust tendrils, while red shows possibly cooler types of dust and ionized gas from nearby massive stars.
+
+Scientists say most stars formed in large regions like Cygnus X, and then move away from each other over time. Our Sun may have similarly grown up close to other new stars before it left the nest.
+
+From Cloud to Disk
+The newborn star is a feisty baby, shooting out violent jets of magnetically accelerated material as it gets nourishment from the gas and dust whirling around it. Like a blob of pizza dough flattening out as a chef spins it, this material condenses into a flat disk. That “dough” has a preferred direction inherited from the collapse of the cloud. That same spin will remain with the system for its entire life unless another star system gets close enough to interact with it.
+
+At about 100,000 years, the cloud starts to thin out enough to reveal two distinct structures: a newborn star and a fluffy, diffuse disk of gas and dust.
+
+Scientists who study these very young systems are looking for features in the disk that indicate places where planets may be forming. At first, the gravity of a baby planet will warp material around it into a spiral shape. But as the planet grows bigger, it will carve out a larger gap in the disk.
+
+Yasuhiro Hasegawa, a researcher at NASA’s Jet Propulsion Laboratory, has been studying one famous example: HL Tau, using the Atacama Large Millimeter/submillimeter Array (ALMA) – a group of radio telescopes in Chile. Gaps in this disk, making it look like rings, may be the footprints of baby planets, as research has revealed in the last couple of years. “This discovery was a big leap in our field,” he said.
+
+A more mysterious system is called TW Hydrae, the closest star we know that still has a gas-rich protoplanetary disk (although it is still 175 light-years away). ALMA has also revealed striking images of this disk with gaps that suggest planetary formation. However, the gaps appear in vastly different places depending on which wavelength of light was used – radio waves detected by ALMA tell a different story than optical light from the European Southern Observatory’s Very Large Telescope. “The question is, why are there differences? What’s that coming from?” said Hannah Jang-Condell of the University of Wyoming. “It’s a real puzzle.”
+
+NASA’s James Webb Space Telescope, planned for a 2021 launch, could teach us much more about disks like these by measuring the heat radiation coming from them in infrared light.
+
+Planetary ‘Crumbs’
+The whole system is still mostly hydrogen and helium, with about 100 times more gas than dust in the disk. The dust will be critical to forming planets, containing elements such as carbon and iron.
+
+“Planets are essentially the crumbs that don’t end up in the star,” said Joel Green, scientist at Space Telescope Science Institute.
+
+NEWS FLASH: Gluttonous young star
+Changes in stars and their disks often happen over much longer periods than human lifetimes. But the young star FU Orionis has shown marked mood swings in a matter of decades, offering a rare look at a planetary nursery under construction.
+
+In 1936, astronomers observed FU Orionis becoming 100 times brighter than normal – energy emitted as the star gobbled up gas and dust from its surrounding disk. More recently, astronomers used NASA’s Stratospheric Observatory for Infrared Astronomy (SOFIA) and the Spitzer Space Telescope to check in on the young star. They found that the star has been eating the innermost part of its disk, and that the star’s overall brightness has been slowly fading since 1936.
+
+The initial flare-up seen more than 80 years ago would have altered the chemical composition of material swirling closest to the star. If that material one day forms planets, the fates of those worlds will be altered by FU Orionis’s snacking.
+
+Collisions, Collisions
+A very young disk around a star contains mostly gas with dust – no bigger than grains of sand – swirling around in it. The baby star is still throwing out extremely hot winds, dominated by positively charged particles called protons and neutral helium atoms. A lot of the material from the disk is still falling on the star. But small groups of lucky dust particles are crashing into one another, clumping into larger objects. Planets will form from less than 1 percent of the mass of the disk.
+
+“We look at our solar system now, and we’re just seeing the stuff that has survived that initial process,” Mamajek said. “There might have been earlier generations of planets that actually migrated in and were absorbed by the Sun, in just the first few million years of our history.”
+
+The presence of gas helps particles of solid material stick together. Dust clumps become pebbles, pebbles become larger rocks that grind together to enlarge. Some break apart, but others hold on. These are the building blocks of planets, sometimes called “planetesimals.”
+
+A different kind of adventure in making planets is called “gravitational instability.” When pockets of gas in the protoplanetary disk become overly dense, they can cool down and contract rapidly into objects ranging from comets to planets. This can only happen far away from the star so that the star’s own gravity doesn’t rip these objects apart. Rather than beginning as grains and accumulating material slowly over millions of years, bodies born from instability are thought to reach their full size within a few thousand years.
+
+The giant planets of our solar system were once thought to have formed this way, through the collapse of gas in the disk. Today, scientists think it’s more likely this is the story of how planets much more massive than Jupiter formed around other stars. Some brown dwarfs, objects too big to be planets but too small to fuse hydrogen and become stars, may have been born this way, too.
+
+In our own solar system, small icy bodies in the Kuiper Belt, where Pluto orbits, may have emerged directly from the protoplanetary disk as well. These so-called “Cold Classical Belt” objects could have formed quickly from the collapse of rock and ice.
+
+Temperature Matters
+Where the disk is colder, far enough from the star that water can freeze, tiny fragments of ice hitch a ride with dust. Dirty snowballs can amass into giant planetary cores. These colder regions also allow gas molecules to slow down enough to be drawn onto a planet. This is how Jupiter, Saturn, Uranus, and Neptune – the gas giants of our solar system – are thought to have formed: a rock-ice core grabbing gas out of the disk and forming the wondrous swirling layers of gas of the planets we see today. Jupiter and Saturn are thought to have formed first, and quickly – within the first 10 million years of the solar system.
+
+In the warmer reaches of the disk, closer to the star, rocky planets take shape after the icy giants form – and there’s not a lot of gas left for the terrestrial planets to snag. Planets that are rocky like Mercury, Venus, Earth, and Mars may take tens of millions of years to form after the birth of the star. The details of exactly where planets prefer to form in disks are still a mystery – and an ongoing area of research.
+
+“You want a sweet spot where things collapse easily, but not so far out that the material is so spread out,” Green said.
+
+NEWS FLASH: Shhhh….Planet Formation in Progress
+There have been very few examples of baby planets caught in the act of forming in a disk around a star. But Miriam Keppler and André Müller at the Max Planck Institute for Astronomy in Germany each led teams that captured rare images of young planet PDS 70b, using the European Southern Observatory’s Very Large Telescope in Paranal, Chile. They announced the discovery in 2018.
+
+A gas giant, PDS 70b is already more massive than Jupiter and could still be growing. Its gravity carves out a large gap in its disk and orbits its star roughly at the same distance as Uranus in relation to our Sun. Because material continues to fall on PDS 70b from the disk, releasing energy, the young PDS 70b is hotter than any planet in our solar system at 1,800 degrees Fahrenheit (1,000 degrees Celsius).
+
+The PDS 70 system is 5 million years old — only a little over 0.1 percent the age of Earth. Although the planet is in some sense newborn, Müller thinks of it more like a 14-year-old. “It’s not fully grown up,” he said. “It’s still a little bit wild, but starting to get mature.”
+
+Moving Around
+Based on just an image of baby planets in a protoplanetary disk, it is impossible to determine what the system will look like as it matures. “Is disk destiny? Probably not,” said Heather Knutson, professor at Caltech in Pasadena. “Growing planets don’t stay put. They move around. They interact with each other, and with the gas disk, in a way that can be quite random and messy.”
+
+The tail end of the formation of the solar system, between about 50 million and 500 million years after the Sun formed, was particularly turbulent for our solar system. This was when the giant planets of the outer solar system reorganized themselves. Based on careful study of the distribution of bodies in the asteroid belt between Mars and Jupiter and the Kuiper Belt beyond Neptune, we now know there must have been a period when the orbital positions of Jupiter and Saturn led to a tug-of-war. This shuffling may have scattered Uranus and Neptune out to their current orbits and bombarded Earth with debris.
+
+“The late phases of planet formation were a really gradual process as planets slowly shifted in their orbits,” said Avi Mandell, researcher at NASA’s Goddard Space Flight Center. “We believe those small changes may have eventually led to a huge event of scattering between planets.”
+
+But what exactly caused it? A hotly debated question in planetary science is how a special alignment, or “resonance,” between the orbits of Jupiter and Saturn could have changed their positions, as well as those of Uranus and Neptune.
+
+We still have a few groups of small objects that were likely flung around as Jupiter and Saturn tumbled through their youth. The asteroid belt between Mars and Jupiter contains small rocky “planet wannabes” that never got to reach their potential because of interference from Jupiter’s gravity, Knutson said. The Kuiper Belt, which contains Pluto, was probably shaped by this process of planetary shuffling, too, especially because of Neptune’s scattering. There’s a whole other outpost even farther afield: the Oort Cloud, a sparse but vast sphere of comets circling the Sun. The Oort Cloud begins roughly 200 billion miles (300 billion kilometers) away from the Sun and may extend as far as 9 trillion miles (10 trillion kilometers) from our star.
+
+Scientists are looking at other star systems at various ages to search for evidence of similar processes happening elsewhere. “By combining the archaeology of our own solar system with the formation of planets in other systems, we can create a holistic picture of how we came to have the planetary architecture we see today,” Mandell said.
+
+A Turbulent Time
+After the gas of the disk has been grabbed up by rocky planets or dissipated into the vastness of space, the planets don’t sit still. In such a young system, planets or planetary building blocks called “protoplanets” may be orbiting on collision courses with each other, and the absence of gas makes moving around easier than ever.
+
+Big planets may kick smaller bodies into the star or out of the system entirely. This is one possible explanation for large, lonely bodies called “rogue planets” that have been found without stars. The recent mysterious visitor to our own solar system, a small comet named ’Oumuamua, is thought to have been ejected from a different star system.
+
+NEWS FLASH: Evaporating Planet
+One revelation that made scientists rethink their ideas about a planet’s life story is that our galaxy has many “hot Jupiters.” These are planets found in other star systems, not our own, that are about the same size as Jupiter or larger but orbit much closer to their host stars – worlds where one “year” can be less than two days.
+
+In 2017, scientists announced the discovery of KELT-9b, a planet hotter than most stars, where temperatures can reach 7,800 degrees Fahrenheit. It was discovered using one of the two ground-based telescopes called KELT, or Kilodegree Extremely Little Telescope. By 2018, evidence had emerged that the star’s gravity is actually ripping the planet apart.
+
+KELT-9b and other hot Jupiters could not have formed so close to their stars, or else their building blocks would have been ripped apart long ago. Only in colder, farther regions of a protoplanetary disk could such immense planets take shape. These gas giants must have migrated toward the star only after reaching their immense sizes.
+
+Settling Down
+At approximately 100 million to 1 billion years old, planets tend to settle down in their orbits and stars don’t flare up as much. Our own solar system, about 4.5 billion years old, is the model for this idea of planetary “middle age.” Mandell thinks of our planetary system as about 45 to 50 years old, when scaled down to a human lifetime.
+
+But by studying exoplanets, the planets beyond our solar system, scientists know that our solar system is not the only way a planetary system can look in this comfortable age of life.
+
+One star that recently became famous for its seven Earth-size rocky planets, TRAPPIST-1, formed somewhere between 5.4 billion and 9.8 billion years ago, safely older than our solar system. TRAPPIST-1, at only about 9% the size of our Sun, is an extremely faint M-dwarf star. All of its planets huddle extremely close together — all within the orbit of Mercury. Because the star’s energy output is so low, its farthest planet, TRAPPIST-1 h, may be a ball of ice, even though it makes one revolution around its star in less than 19 days. Another planet in this system, called TRAPPIST-1 e, is especially similar to Earth in the amount of starlight its surface receives, even though one “year” there is 6.1 days.
+
+Hot Jupiters, about the same size as Jupiter or larger, orbiting much closer to their host stars and experiencing scorching hot temperatures, are nowhere to be found in our solar system. We could have had a hot Jupiter that got swallowed by the Sun early on, but plenty have survived in other systems – even older ones. Two examples are HAT-P-65 b, which scientists calculate to be 5.5 billion years old, and HAT-P-66 b, with an estimated age of 4.7 billion years. Other exotic kinds of planets around other stars include “super-Earths” – large rocky planets up to 10 times the mass of Earth – and small gaseous planets called “mini-Neptunes.”
+
+The Sun may wipe out life on Earth even before it swells up to reach its red giant phase. Over the next couple of billion years, the increasing amounts of energy Earth will receive from the aging, expanding Sun will warm its atmosphere. The hotter the atmosphere, the more water vapor it will entrap as water evaporates from Earth’s surface. The Sun’s ultraviolet rays will break this water vapor down into oxygen and hydrogen, a gas light enough to escape.
+
+With water escaping into space through this process, the oceans will dry up and the crust will dry out, leaving a desolate, uninhabitable world. As volcanoes continue throwing carbon dioxide into the atmosphere, there will be no oceans to swallow it or life forms to store it. This buildup of carbon dioxide causes what is called a “runaway greenhouse effect,” turning Earth into a hot, dry world like Venus. In fact, Venus may have once hosted a shallow liquid-water ocean and temperatures conducive to life before a runaway greenhouse process made its environment unbearable when it was as old as 2 billion years.
+
+Aging Into Gianthood
+When our Sun approaches its red giant phase some 6 billion years from now, it will run out of fuel in its core. As hydrogen fusion slows, the core once again begins to contract. As the core gets smaller, it heats up until it can kick off another round of nuclear reactions, fusing helium into heavier elements such as carbon, nitrogen, and oxygen. The hotter core also makes hydrogen fuse in the “shell” of material surrounding the core. Meanwhile, extra heat produced deep within the star causes its outer layer of gas to puff up.
+
+The end of the red giant phase is typically the most violent time in a star’s life. The bloated, dying star throws out material from its outer layers in intense episodic bursts. In our own solar system, the Sun will puff up so much that it will melt, evaporate, and eat up some of the inner rocky planets. “I am confident that the Sun will swallow Mercury and Venus, and not Mars. But the fate of the Earth – which resides in between – is less clear,” said astronomer Dimitri Veras at the University of Warwick.
+
+Scientists studying whether or not Earth will be both toasted and swallowed create computer models of the gravitational interactions between Earth and the Sun as the solar system ages. Recent modeling suggests Earth probably won’t make it out intact. But even if it does, all of the planets that survive will experience skyrocketing levels of energy from the expanding Sun, bathing their atmospheres and surfaces with intense radiation.
+
+“We’ll all be long gone,” Mandell assured us. “Earth won’t be hab itable, and the only chance for survival would be for an advanced civilization to migrate to a new planetary home.”
+
+The planets’ orbits may also become unstable. As the red giant loses mass, the star’s gravitational hold on its planets becomes much weaker, so their orbits will expand. In our own solar system, the Sun will throw off about half its mass, so the outer planets’ orbits will drift outward, settling twice as far as they are today. Neptune, at 30 times the Earth-Sun distance, will eventually hike out to about 60 times the Earth-Sun distance. Approaching the end of its fuel-burning life, the Sun will become much brighter and bigger. It will grow so large in diameter that it could fill the entire sky from the surface of a surviving planet.
+
+NEWS FLASH: Heating up frozen worlds
+Life as we know it requires liquid water, and a rocky planet needs a certain amount of starlight so that any available water won’t evaporate away or freeze. If scientists know enough about a star and its planet, they can calculate whether the planet could indeed harbor liquid water, meaning the star would be in the “habitable zone.”
+
+But habitability of planets changes as a star gets older. A 2016 study led by Ramses M. Ramirez of Cornell University looked at different stars and predicted what would happen to their planets over time. Frozen planets, too cold to host liquid water when their star resembles our present-day Sun, may thaw out when their star expands into a red giant, because they will receive so much more heat energy.
+
+“In the far future, such worlds could become habitable around small red suns for billions of years, maybe even starting life, just like Earth,” said study co-author Lisa Kaltnegger of Cornell. “That makes me very optimistic for the chances for life in the long run.”
+
+When the core of the former red giant has exhausted all of its fuel and shed all the gas it can, the remaining dense stellar cinder is called a white dwarf. The white dwarf is considered “dead” because atoms inside of it no longer fuse to give the star energy. But it still “shines” because it is so hot. Eventually, it will cool off and fade from view. Our Sun will reach this death about 8 billion years from now.
+
+Observations of dusty debris belts around white dwarfs suggest that giant planets may hold small bodies in orbit around a white dwarf, and even fling them inward, to be chewed up by the dead star. This idea took root because of a variety of heavy elements detected in the atmospheres of white dwarfs – so heavy that they should have sunk into the dense, dead star long ago.
+
+Almost every star in the universe eventually goes through this transition from red giant to white dwarf, although extremely low-mass stars will take longer than the present age of the universe to get there. However, if a star is extremely massive, it could follow a different path, expanding into a supergiant star and ultimately exploding as a supernova.
+
+Can planets be born in a supernova?
+Yes! The unimaginably violent explosion of a supernova can trigger a whole new generation of stars, as well as planets. In fact, the first planets ever discovered outside our solar system are orbiting a pulsar, the crushingly dense remnant of a supernova that spins and pulses like a lighthouse. PSR B1257+12, discovered with the Arecibo radio telescope in Puerto Rico in 1992, hosts three planets. These planets would not have survived their star’s explosion. So they must have been created in the aftermath as debris formed a swirling cloud of gas and dust around the pulsar.
+
+On the Shoulders of Supergiants
+Supergiant stars contain many layers of different kinds of atoms fusing, creating an enormous output of energy. To date, no planets have been found around supergiant stars that will explode one day. That doesn’t mean they aren’t there, however. Supergiant stars are very rare, and so bright that they would far outshine any orbiting bodies. It is possible that our technology is not yet advanced enough to find their planets.
+
+Supergiants may be fleeting, but their explosions play an important role in this story. The shock wave from the supernova can trigger the formation of new stars, birthing new lives in the wake of death.
+
+NEWS FLASH: Buried exoplanet treasure
+In 1917, astronomer Adriaan van Maanen discovered what appeared to be a faint, fast-moving star. The same year, Walter Sydney Adams captured the star’s spectrum – a chemical fingerprint. Little did they know that they had captured the very first evidence of a white dwarf surrounded by planetary debris – and perhaps even the first indication of the existence of exoplanets.
+
+The spectrum of the star showed calcium and other heavy elements, meaning the white dwarf had gobbled up material with these components relatively recently. The leading theory is that exoplanets could fling small rocky bodies toward the white dwarf, where they would be pulverized by the dead star’s gravity.
+
+Today we call these dead stars with heavy elements in their photospheres “polluted white dwarfs.” NASA’s Spitzer Space Telescope has confirmed that about 40 white dwarfs have hot, dusty disks. Another handful emerged in data from NASA’s Wide-field Infrared Survey Explorer (WISE). More than a century after Adams’ spectrum, the puzzle pieces are still coming together: In 2015, astronomers using NASA’s Kepler Space Telescope made the first discovery of a minor planet transiting a white dwarf, and in 2017 a different group found evidence of a white dwarf snacking on a possible comet-like body.
+"`
 
 module.exports = { CONTEXT };

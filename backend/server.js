@@ -180,6 +180,11 @@ async function initializeServer() {
 
   app.post('/import-conversation', upload.single('file'), async (req, res) => {
     try {
+      const { sessionId } = req.body;
+      if (!sessionId) {
+        return res.status(400).json({ error: 'sessionId is required' });
+      }
+
       const filePath = req.file.path;
       const fileContent = await fs.readFile(filePath, 'utf-8');
       const importedConversation = JSON.parse(fileContent);
@@ -198,7 +203,11 @@ async function initializeServer() {
             text: msg.content
           }));
       
-      conversationHistory = [{ role: 'system', content: context }, ...formattedConversation];
+      // Update the session conversation with the imported data
+      sessionConversations[sessionId] = [
+        { role: 'system', content: context },
+        ...formattedConversation
+      ];
       
       await fs.unlink(filePath); // Delete the uploaded file after processing
       
